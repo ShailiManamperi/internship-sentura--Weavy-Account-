@@ -1,12 +1,12 @@
 package lk.ijse.devop.user_mircoservice.api;
 
-import lk.ijse.gdse.aad.dto.UserDTO;
-import lk.ijse.gdse.aad.dto.sec.ErrorRes;
-import lk.ijse.gdse.aad.dto.sec.LoginReq;
-import lk.ijse.gdse.aad.dto.sec.LoginRes;
-import lk.ijse.gdse.aad.exception.CreateFailException;
-import lk.ijse.gdse.aad.exception.UserNotFoundException;
-import lk.ijse.gdse.aad.service.UserService;
+import lk.ijse.devop.user_mircoservice.dto.UserDTO;
+import lk.ijse.devop.user_mircoservice.dto.sec.ErrorRes;
+import lk.ijse.devop.user_mircoservice.dto.sec.LoginReq;
+import lk.ijse.devop.user_mircoservice.dto.sec.LoginRes;
+import lk.ijse.devop.user_mircoservice.exception.CreateFailException;
+import lk.ijse.devop.user_mircoservice.exception.UserNotFoundException;
+import lk.ijse.devop.user_mircoservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

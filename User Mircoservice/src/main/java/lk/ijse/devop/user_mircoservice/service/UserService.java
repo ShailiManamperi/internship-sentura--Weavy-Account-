@@ -1,11 +1,8 @@
 package lk.ijse.devop.user_mircoservice.service;
 
 
-import lk.ijse.gdse.aad.dto.UserDTO;
-import lk.ijse.gdse.aad.exception.CreateFailException;
-import lk.ijse.gdse.aad.exception.DeleteFailException;
-import lk.ijse.gdse.aad.exception.UpdateFailException;
-import lk.ijse.gdse.aad.exception.UserNotFoundException;
+import lk.ijse.devop.user_mircoservice.dto.UserDTO;
+import lk.ijse.devop.user_mircoservice.exception.*;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package lk.ijse.devop.user_mircoservice.repo;
 
 import jakarta.transaction.Transactional;
-import lk.ijse.gdse.aad.entity.User;
+import lk.ijse.devop.user_mircoservice.entity.User;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

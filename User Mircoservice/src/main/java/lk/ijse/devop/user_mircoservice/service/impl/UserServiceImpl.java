@@ -1,13 +1,10 @@
 package lk.ijse.devop.user_mircoservice.service.impl;
 
-import lk.ijse.gdse.aad.dto.UserDTO;
-import lk.ijse.gdse.aad.entity.User;
-import lk.ijse.gdse.aad.exception.CreateFailException;
-import lk.ijse.gdse.aad.exception.DeleteFailException;
-import lk.ijse.gdse.aad.exception.UpdateFailException;
-import lk.ijse.gdse.aad.exception.UserNotFoundException;
-import lk.ijse.gdse.aad.repo.UserRepo;
-import lk.ijse.gdse.aad.service.UserService;
+import lk.ijse.devop.user_mircoservice.dto.UserDTO;
+import lk.ijse.devop.user_mircoservice.entity.User;
+import lk.ijse.devop.user_mircoservice.exception.*;
+import lk.ijse.devop.user_mircoservice.repo.UserRepo;
+import lk.ijse.devop.user_mircoservice.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
