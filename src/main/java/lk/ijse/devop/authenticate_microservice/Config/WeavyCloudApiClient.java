@@ -4,6 +4,7 @@ import okhttp3.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import java.io.IOException;
+
 @CrossOrigin
 @Controller
 public class WeavyCloudApiClient {
@@ -14,8 +15,8 @@ public class WeavyCloudApiClient {
 
     public String getSomeData() throws Exception {
         Request request = new Request.Builder()
-                .url(BASE_URL + "/some-endpoint")
-                .header("Authorization", "Bearer " + apiKey)  // Add authorization header
+                .url(BASE_URL + "/some-data")  // Corrected endpoint path
+                .header("Authorization", "Bearer " + apiKey)
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
@@ -26,6 +27,6 @@ public class WeavyCloudApiClient {
             return response.body().string();
         }
     }
-
-
 }
+
+

@@ -14,12 +14,14 @@ public class WeavyCloudApiWrapper {
         this.weavyCloudApiClient = weavyCloudApiClient;
     }
 
-    @GetMapping("/some-data")
+    @GetMapping("/user")
     public ResponseEntity<String> getSomeData() {
         try {
             String result = weavyCloudApiClient.getSomeData();
             return ResponseEntity.ok(result);
         } catch (Exception e) {
+            // Log the exception for debugging
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error fetching data from Weavy cloud");
         }
     }
