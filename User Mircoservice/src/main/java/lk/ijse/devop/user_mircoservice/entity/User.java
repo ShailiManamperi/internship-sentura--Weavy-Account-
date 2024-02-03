@@ -30,8 +30,7 @@ public class User {
     private int picture_id;
     private String avatar_url;
     private Object metadata;
-    @ElementCollection
-    private List[] tags;
+    private String[] tags;
     private String presence;
     private String created_at;
     private String modified_at;

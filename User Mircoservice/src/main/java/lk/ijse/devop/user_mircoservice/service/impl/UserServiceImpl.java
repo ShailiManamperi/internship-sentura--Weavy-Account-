@@ -41,7 +41,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(String email) throws DeleteFailException {
-
+        try {
+            int id = userRepo.findByEmail(email).getId();
+            userRepo.deleteById(id);
+        }catch (Exception e){
+            throw new DeleteFailException("Operation Fail", e);
+        }
     }
 
     @Override

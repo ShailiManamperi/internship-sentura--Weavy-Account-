@@ -6,10 +6,6 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 @AllArgsConstructor
 @Data
 public class UserDTO {
@@ -37,9 +33,5 @@ public class UserDTO {
     private boolean is_suspended;
     private boolean is_trashed;
 
-    public UserDTO(){
-        roles = new ArrayList<>();
-        roles.add("user");
-    }
 
 }

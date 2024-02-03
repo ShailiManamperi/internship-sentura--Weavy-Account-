@@ -37,31 +37,29 @@ public class UserApi {
     }
 
     @PostMapping(value = "/{id:\\d+}", consumes = "multipart/form-data")
-    public ResponseEntity<UserDTO> save(@RequestPart(value = "profilePic") byte[] profilePic,
-                                        @RequestPart(value = "userName")String userName,
-                                        @RequestPart(value = "password") String password,
-                                        @RequestPart(value = "contact") String contact,
+    public ResponseEntity<UserDTO> save(@RequestPart(value = "uid") String uid,
+                                        @RequestPart(value = "display_name")String display_name,
                                         @RequestPart(value = "email") String email,
-                                        @RequestPart(value = "birthday") String birthday,
-                                        @RequestPart(value = "nicFront") byte[] nicFront,
-                                        @RequestPart(value = "nicRear") byte[] nicRear,
-                                        @RequestPart(value = "gender") String gender,
-                                        @RequestPart(value = "nicNo") String nicNo
+                                        @RequestPart(value = "given_name") String given_name,
+                                        @RequestPart(value = "middle_name") String middle_name,
+                                        @RequestPart(value = "name") String name,
+                                        @RequestPart(value = "family_name") String family_name,
+                                        @RequestPart(value = "nickname") String nickname,
+                                        @RequestPart(value = "phone_number") String phone_num,
+                                        @RequestPart(value = "comment") String comment,
+                                        @RequestPart(value = "directory_id") int directory_id,
+                                        @RequestPart(value = "picture_id") int picture_id,
+                                        @RequestPart(value = "avatar_url") String avatar_url,
+                                        @RequestPart(value = "objects") Object metadata,
+                                        @RequestPart(value = "tags") String[] tags,
+                                        @RequestPart(value = "presence") String presence,
+
     ){
         System.out.println(nicNo);
         System.out.println(nicFront);
         try {
             UserDTO userDTO = new UserDTO();
-            userDTO.setUsername(userName);
-            userDTO.setPassword(password);
-            userDTO.setContact(contact);
-            userDTO.setEmail(email);
-            userDTO.setUsernic(nicNo);
-            userDTO.setBirthday(LocalDate.parse(birthday));
-            userDTO.setGender(gender);
-            userDTO.setNicFrontByte(nicFront);
-            userDTO.setNicRearByte(nicRear);
-            userDTO.setProfilePicByte(profilePic);
+            userDTO.set_suspended();
 
 
             int id = userService.addUsers(userDTO);
