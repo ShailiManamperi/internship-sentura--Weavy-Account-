@@ -53,15 +53,34 @@ public class UserApi {
                                         @RequestPart(value = "objects") Object metadata,
                                         @RequestPart(value = "tags") String[] tags,
                                         @RequestPart(value = "presence") String presence,
+                                        @RequestPart(value = "created_at") String created_at,
+                                        @RequestPart(value = "modified_at") String modified_at,
+                                        @RequestPart(value = "is_suspended") boolean is_suspended,
+                                        @RequestPart(value = "is_trashed") boolean is_trashed
 
     ){
-        System.out.println(nicNo);
-        System.out.println(nicFront);
+
         try {
             UserDTO userDTO = new UserDTO();
-            userDTO.set_suspended();
-
-
+            userDTO.setUid(uid);
+            userDTO.setDisplay_name(display_name);
+            userDTO.setEmail(email);
+            userDTO.setGiven_name(given_name);
+            userDTO.setMiddle_name(middle_name);
+            userDTO.setName(name);
+            userDTO.setFamily_name(family_name);
+            userDTO.setNickname(nickname);
+            userDTO.setPhone_number(phone_num);
+            userDTO.setComment(comment);
+            userDTO.setDirectory_id(directory_id);
+            userDTO.setPicture_id(picture_id);
+            userDTO.setMetadata(metadata);
+            userDTO.setTags(tags);
+            userDTO.setPresence(presence);
+            userDTO.setCreated_at(created_at);
+            userDTO.setModified_at(modified_at);
+            userDTO.set_suspended(is_suspended);
+            userDTO.set_trashed(is_trashed);
             int id = userService.addUsers(userDTO);
             userDTO.setId(id);
             return new ResponseEntity<>(userDTO, HttpStatus.CREATED);
